@@ -11,11 +11,12 @@ class PortContentList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      source: [poster1, poster2, poster3],
+      source: [poster1, poster2, poster3, poster1],
       describeHeader: [
         "Landing poster 'Air max day'",
         "UIT Summer music fest",
         "UIT Leader 2020",
+        "Landing poster 'Air max day'",
       ],
     };
   }
@@ -30,12 +31,17 @@ class PortContentList extends React.Component {
   };
 
   render() {
+    const { source, describeHeader } = this.state;
     return (
       <div className="wide grid row portfolio-content">
-        {this.renderContent(0)}
-        {this.renderContent(1)}
-        {this.renderContent(2)}
-        {this.renderContent(1)}
+        {source.map((singleSource, i) => {
+          return (
+            <PortContent
+              source={singleSource}
+              describeHeader={describeHeader[i]}
+            />
+          );
+        })}
       </div>
     );
   }

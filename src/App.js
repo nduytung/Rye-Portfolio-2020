@@ -1,21 +1,22 @@
+import "./App.css";
+import "./grid.css";
+import "./fonts/BungeeInline-Regular.ttf";
 import React from "react";
 import ReactDOM from "react-dom";
-import "./grid.css";
 import NavBar from "./components/NavBar";
-import "./App.css";
-import Greeting from "./components/Greeting";
-import PortContentList from "./components/PortContentList";
-import AboutMe from "./components/AboutMe";
-import CommentList from "./components/CommentList";
 import Header from "./components/Header";
-import SkillList from "./components/SkillList";
+import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
-import "./fonts/BungeeInline-Regular.ttf";
+import Greeting from "./components/Greeting";
+import SkillList from "./components/SkillList";
+import CommentList from "./components/CommentList";
+import PortContentList from "./components/PortContentList";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      //TEN CAC LIST ITEM TRONG 2 NAV BAR
       navBar: ["PRODUCTS", "SKILLS", "ABOUT", "PORTFOLIO", "CONTACT"],
       linkContent: [
         "Posters",
@@ -24,30 +25,36 @@ class App extends React.Component {
         "Event Managing",
         "Social Contents",
       ],
+      //DANH SACH CAC SECTION
+      title: ["Deployed ", "Personal", "Coleagues ", "Get in touch"],
+      titleEmph: [
+        "Projects and Media Publication",
+        "Qualifications",
+        "Observations",
+        "with me",
+      ],
     };
   }
 
   render() {
+    const { navBar, linkContent, titleEmph, title } = this.state;
     return (
       <div className="body">
         <div className="main-background"> </div>
         <div className="cover">
-          <NavBar content={this.state.navBar} linkId={this.state.linkId} />
+          <NavBar content={navBar} className="main-nav-bar" />
           <Greeting />
         </div>
 
         <div className="content">
           <div className="portfolio" id="section1">
-            <Header
-              title="Deployed "
-              titleEmph="Projects and Media Publication"
-            />
-            <NavBar content={this.state.linkContent} />
+            <Header title={title[0]} titleEmph={titleEmph[0]} />
+            <NavBar content={linkContent} />
             <PortContentList />
           </div>
 
           <div className="my-skill" id="section2">
-            <Header title="Personal" titleEmph="Qualifications" />
+            <Header title={title[1]} titleEmph={titleEmph[1]} />
             <SkillList />
           </div>
 
@@ -56,12 +63,12 @@ class App extends React.Component {
           </div>
 
           <div className="comment" id="section4">
-            <Header title="Coleagues " titleEmph="Observations" />
+            <Header title={title[2]} titleEmph={titleEmph[2]} />
             <CommentList />
           </div>
 
           <div className="contact" id="section5">
-            <Header title="Get in touch" titleEmph="with me" />
+            <Header title={title[3]} titleEmph={titleEmph[3]} />
             <Contact />
           </div>
         </div>

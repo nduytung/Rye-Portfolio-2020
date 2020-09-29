@@ -68,7 +68,8 @@ a {
   color: white;
 }
 .portfolio {
-  margin-top: -20px;
+  margin-top: 0px;
+  padding-top: 50px;
 }
 
 .portfolio > h1 {
@@ -100,4 +101,12 @@ a {
   .cover {
     height: 750px;
   }
+}
+
+.main-nav-bar {
+  position: fixed;
+}
+
+.contact {
+  padding-top: 50px;
 }

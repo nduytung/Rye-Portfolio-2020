@@ -4,10 +4,6 @@ import "../componentCss/PortContentCss.css";
 import "../grid.css";
 
 class PortContent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { describeHeader, source } = this.props;
     return (

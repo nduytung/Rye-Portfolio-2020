@@ -1,6 +1,10 @@
 .nav-bar {
   width: 100%;
   padding: 0 auto;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 100000;
 }
 
 .nav-list {

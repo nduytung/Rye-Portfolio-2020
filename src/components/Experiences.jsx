@@ -4,10 +4,6 @@ import "../componentCss/ExperiencesCss.css";
 import "../grid.css";
 
 class Experiences extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { time, name, describe, place } = this.props;
     return (

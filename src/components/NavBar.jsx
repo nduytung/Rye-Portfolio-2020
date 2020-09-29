@@ -9,7 +9,11 @@ class NavBar extends React.Component {
     return (
       <div className="nav-bar-wrapper ">
         <div className="nav-bar-container grid wide">
-          <div className="nav-bar ">
+          <div
+            className="nav-bar "
+            data-aos="fade-down"
+            data-aos-duration="1500"
+          >
             <ul className="nav-list">
               <li className="nav-item">
                 <a href="#section1"> {content[0]}</a>

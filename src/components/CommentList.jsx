@@ -11,18 +11,26 @@ class CommentList extends React.Component {
     super(props);
     this.state = {
       source: [Duc, Thao, Kel],
+      tutorName: [
+        "- Tri Duc - Teammate from Vo Truong Toan Hight school - Leader at UEL",
+        "- Kel - Personal mentor from 2018 to now",
+        "- Nguyen Thanh Thao - NETSEC Club leader - co-worker from 2019 at UIT",
+      ],
     };
   }
 
   render() {
-    const { source } = this.state;
     return (
       <div className="grid wide list-comment-wrapper">
         <div className="row">
-          <ClientComment source={source[0]} />
-          <ClientComment source={source[1]} />
-          <ClientComment source={source[2]} />
-          <ClientComment source={source[0]} />
+          {this.state.source.map((eachSource, i) => {
+            return (
+              <ClientComment
+                source={eachSource}
+                tutorName={this.state.tutorName[i]}
+              />
+            );
+          })}
         </div>
       </div>
     );

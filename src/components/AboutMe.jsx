@@ -1,15 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "../App.css";
 import Header from "./Header";
 import "../componentCss/AboutMeCss.css";
 import aboutMe from "../img/about-me.jpg";
 
 class AboutMe extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="l-12 m-12 about-me-wrapper grid wide">
@@ -19,7 +14,6 @@ class AboutMe extends React.Component {
             data-aos="fade-up"
             data-aos-duration="1500"
           >
-            >
             <img className="l-12 m-12" src={aboutMe} alt="no pic" />
           </div>
           <div className="l-6 m-6 about-me-content">
